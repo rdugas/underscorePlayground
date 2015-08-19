@@ -21,7 +21,8 @@ margin: 0;
 
 #trueAnswers, #falseAnswers, #otherAnswers,
 #notTrueAnswers, #notFalseAnswers,
-#trueQuestionList, #falseQuestionList {
+#trueQuestionList, #falseQuestionList,
+#trueQuestionListReduceSum, #falseQuestionListReduceSum  {
   height: 40px;
   width: 100%;
   border: 1px solid #05B1E5;
@@ -46,6 +47,11 @@ margin: 0;
  
  #trueQuestionList, #falseQuestionList{
   background-color: yellow;
+ }
+ 
+ #trueQuestionListReduceSum, #falseQuestionListReduceSum {
+  background-color: blue;
+  color: white;
  }
  
 .answer:hover {

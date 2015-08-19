@@ -125,6 +125,12 @@ $(document).ready(function(){
 	
 	var falseQuestionList = _.map(falseAnswersFiltered, function(answer){return answer.questionNumber});
 	$('#falseQuestionList').html("Questions that eval to false: " + falseQuestionList);
+	
+	var trueQuestionListReduceSum = _.reduce(trueQuestionList, function(memo, num){return memo + num});
+	$('#trueQuestionListReduceSum').html("Reduce sum of true question numbers: " + trueQuestionListReduceSum);
+	
+	var falseQuestionListReduceSum = _.reduce(falseQuestionList, function(memo, num){return memo + num}, 20);
+	$('#falseQuestionListReduceSum').html("Reduce sum of false question numbers with memo of 20 adding on : " + falseQuestionListReduceSum);
 
     $('#correctAmount').html("Rob got " + correctCount + "(" + (correctCount-1) + ")" + " out of 20(19) Correct!!!");
 
