@@ -1,0 +1,46 @@
+* {
+padding: 0;
+margin: 0;
+}
+
+#answer-container {
+  width: 100%
+}
+
+
+.answer, #title, #correctAmount,
+#trueAnswers, #falseAnswers, #otherAnswers {
+  height: 70px;
+  width: 100%;
+  border: 1px solid #05B1E5;
+  text-align: center;
+  vertical-align: middle;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+<div id="trueAnswers"></div>
+  <div id="falseAnswers"></div>
+  <div id="otherAnswers"></div>
+
+ #title, #correctAmount {
+  background-color: lightblue;
+ }
+
+ #trueAnswers, #falseAnswers, #otherAnswers{
+  background-color: orange;
+ }
+ 
+.answer:hover {
+  cursor: crosshair;
+  background-color: #05B1E5;
+  color: #ffffff;
+}
+
+.correct {
+  background-color: #05E50D;
+}
+
+.incorrect {
+  background-color: #FA1313;
+}
