@@ -4,64 +4,84 @@ $(document).ready(function(){
     // Replace each string with what the question EVALUATES TO
     var answers = [ 
     {
-      question: !true,
+      questionNumber: 0,
+	  question: !true,
       answer:   false
     }, {
-      question: !!true,
+      questionNumber: 1,
+	  question: !!true,
       answer:   true
     }, {
-      question: !!!!0,
+      questionNumber: 2,
+	  question: !!!!0,
       answer:   false
     }, {
-      question: false || true,
+	  questionNumber: 3,
+	  question: false || true,
       answer:   true
     }, {
-      question: false && true,
+      questionNumber: 4,
+	  question: false && true,
       answer:   false
     }, {
-      question: true && 'false',
+      questionNumber: 5,
+	  question: true && 'false',
       answer:   'false'
     }, {
-      question: undefined || true,
+      questionNumber: 6,
+	  question: undefined || true,
       answer:   true
     }, {
-      question: false && 73,
+      questionNumber: 7,
+	  question: false && 73,
       answer:   false
     }, {
-      question: false || 73,
+      questionNumber: 8,
+	  question: false || 73,
       answer:   73
     }, {
-      question: 73 || false,
+      questionNumber: 9,
+	  question: 73 || false,
       answer:   73
     }, {
-      question: '73' == 73,
+      questionNumber: 10,
+	  question: '73' == 73,
       answer:   true
     }, {
-      question: '73' === 73,
+      questionNumber: 11,
+	  question: '73' === 73,
       answer:   false
     }, {
-      question: true !== false,
+      questionNumber: 12,
+	  question: true !== false,
       answer:   true
     }, {
-      question: (true + true) * 2,
+      questionNumber: 13,
+	  question: (true + true) * 2,
       answer:   4
     }, {
-      question: !![],
+      questionNumber: 14,
+	  question: !![],
       answer:   true
     }, {
-      question: [1, 2 + '2', 3 + 3][1],
+      questionNumber: 15,
+	  question: [1, 2 + '2', 3 + 3][1],
       answer:   "22"
     }, {
-      question: [1, [2, 3, 4, [5, 6, [7]], [8, 9]], 10][1][3][2][0],
+      questionNumber: 16,
+	  question: [1, [2, 3, 4, [5, 6, [7]], [8, 9]], 10][1][3][2][0],
       answer:   7
     }, {
-      question: { thisMightBe: null }['thisMightBe'] || false,
+      questionNumber: 17,
+	  question: { thisMightBe: null }['thisMightBe'] || false,
       answer:   false
     }, {
-      question: true && (null || 0) || (false && !!(33 !== '33')) || (NaN && '' || undefined),
+      questionNumber: 18,
+	  question: true && (null || 0) || (false && !!(33 !== '33')) || (NaN && '' || undefined),
       answer:   undefined
     }, {
-      question: !!!(!!(true === true) && !(!(!(true) || (!!true && !!!!true)))),
+      questionNumber: 19,
+	  question: !!!(!!(true === true) && !(!(!(true) || (!!true && !!!!true)))),
       answer:   false
     }
     ];
@@ -99,6 +119,12 @@ $(document).ready(function(){
 	
 	var notFalseAnswers = _.reject(answers, function(x){return x.answer === falseFilterUsed});
 	$('#notFalseAnswers').html(notFalseAnswers.length + " answers that are not " + falseFilterUsed);
+	
+	var trueQuestionList = _.map(trueAnswersFiltered, function(answer){return answer.questionNumber});
+	$('#trueQuestionList').html("Questions that eval to true: " + trueQuestionList);
+	
+	var falseQuestionList = _.map(falseAnswersFiltered, function(answer){return answer.questionNumber});
+	$('#falseQuestionList').html("Questions that eval to false: " + falseQuestionList);
 
     $('#correctAmount').html("Rob got " + correctCount + "(" + (correctCount-1) + ")" + " out of 20(19) Correct!!!");
 

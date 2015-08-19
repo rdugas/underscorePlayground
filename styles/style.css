@@ -20,7 +20,8 @@ margin: 0;
 
 
 #trueAnswers, #falseAnswers, #otherAnswers,
-#notTrueAnswers, #notFalseAnswers {
+#notTrueAnswers, #notFalseAnswers,
+#trueQuestionList, #falseQuestionList {
   height: 40px;
   width: 100%;
   border: 1px solid #05B1E5;
@@ -41,6 +42,10 @@ margin: 0;
  
  #notTrueAnswers, #notFalseAnswers{
   background-color: pink;
+ }
+ 
+ #trueQuestionList, #falseQuestionList{
+  background-color: yellow;
  }
  
 .answer:hover {
