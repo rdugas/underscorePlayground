@@ -83,15 +83,22 @@ $(document).ready(function(){
     });
 	
 	var trueFilterUsed = true;
+	var falseFilterUsed = false;
+	
 	var trueAnswersFiltered = _.filter(answers, function(x){return x.answer === trueFilterUsed});
 	$('#trueAnswers').html(trueAnswersFiltered.length + " answers that are " + trueFilterUsed);
-	
-	var falseFilterUsed = false;
+
 	var falseAnswersFiltered = _.filter(answers, function(x){return x.answer === falseFilterUsed});
 	$('#falseAnswers').html(falseAnswersFiltered.length + " answers that are " + falseFilterUsed);
 	
 	var otherAnswersFiltered = _.filter(answers, function(x){return x.answer !== trueFilterUsed && x.answer !== falseFilterUsed });
 	$('#otherAnswers').html(otherAnswersFiltered.length + " answers that are some other answer.");
+	
+	var notTrueAnswers = _.reject(answers, function(x){return x.answer === trueFilterUsed});
+	$('#notTrueAnswers').html(notTrueAnswers.length + " answers that are not " + trueFilterUsed);
+	
+	var notFalseAnswers = _.reject(answers, function(x){return x.answer === falseFilterUsed});
+	$('#notFalseAnswers').html(notFalseAnswers.length + " answers that are not " + falseFilterUsed);
 
     $('#correctAmount').html("Rob got " + correctCount + "(" + (correctCount-1) + ")" + " out of 20(19) Correct!!!");
 

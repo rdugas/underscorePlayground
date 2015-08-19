@@ -8,8 +8,7 @@ margin: 0;
 }
 
 
-.answer, #title, #correctAmount,
-#trueAnswers, #falseAnswers, #otherAnswers {
+.answer, #title, #correctAmount {
   height: 70px;
   width: 100%;
   border: 1px solid #05B1E5;
@@ -19,9 +18,18 @@ margin: 0;
   font-size: 20px;
 }
 
-<div id="trueAnswers"></div>
-  <div id="falseAnswers"></div>
-  <div id="otherAnswers"></div>
+
+#trueAnswers, #falseAnswers, #otherAnswers,
+#notTrueAnswers, #notFalseAnswers {
+  height: 40px;
+  width: 100%;
+  border: 1px solid #05B1E5;
+  text-align: left;
+  vertical-align: middle;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+}
+
 
  #title, #correctAmount {
   background-color: lightblue;
@@ -29,6 +37,10 @@ margin: 0;
 
  #trueAnswers, #falseAnswers, #otherAnswers{
   background-color: orange;
+ }
+ 
+ #notTrueAnswers, #notFalseAnswers{
+  background-color: pink;
  }
  
 .answer:hover {
